@@ -1,8 +1,8 @@
 import React from 'react';
-import GoodsItem from '../GoodsItem/GoodsItem';
-import type { GoodsListProps } from '../../types/interfaces';
+import ShopItem from '../GoodsItem/ShopItem';
+import type { IShopListProps } from '../../types/interfaces';
 
-const GoodsList: React.FC<GoodsListProps> = ({ goods }) => {
+const ShopList: React.FC<IShopListProps> = ({ goods, addToBasket }) => {
   if (!goods.length) {
     return <h3>Nothing</h3>;
   }
@@ -11,9 +11,10 @@ const GoodsList: React.FC<GoodsListProps> = ({ goods }) => {
     <div className='goods'>
       {goods.map((item) => {
         return (
-          <GoodsItem
+          <ShopItem
             key={item.offerId}
             {...item}
+            addToBasket={addToBasket}
           />
         );
       })}
@@ -21,4 +22,4 @@ const GoodsList: React.FC<GoodsListProps> = ({ goods }) => {
   );
 };
 
-export default GoodsList;
+export default ShopList;

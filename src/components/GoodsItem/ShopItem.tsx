@@ -1,15 +1,17 @@
 import React from 'react';
-import type { IGood } from '../../types/interfaces';
+import type { IShopItemProps } from '../../types/interfaces';
 
-// import styles from './GoodsItem.module.scss'
+// import styles from './ShopItem.module.scss'
 
-const GoodsItem: React.FC<IGood> = ({
+const ShopItem: React.FC<IShopItemProps> = ({
   offerId,
   displayName,
   displayType,
   displayDescription,
   price,
   displayAssets,
+  quantity,
+  addToBasket,
 }) => {
   return (
     <div
@@ -31,7 +33,19 @@ const GoodsItem: React.FC<IGood> = ({
         <p>{displayDescription}</p>
       </div>
       <div className='card-action'>
-        <button className='btn'>Купить</button>
+        <button
+          className='btn'
+          onClick={() =>
+            addToBasket({
+              offerId,
+              displayName,
+              price,
+              quantity,
+            })
+          }
+        >
+          Купить
+        </button>
         <span
           style={{ color: 'white', fontSize: '1.5rem' }}
           className='right'
@@ -43,4 +57,4 @@ const GoodsItem: React.FC<IGood> = ({
   );
 };
 
-export default GoodsItem;
+export default ShopItem;
