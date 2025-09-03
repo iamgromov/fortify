@@ -7,6 +7,8 @@ const Footer: React.FunctionComponent = () => {
           <a
             className='grey-text text-lighten-4 right'
             href='https://github.com/iamgromov/item-shop'
+            rel='noreferrer'
+            target='_blank'
           >
             Repo
           </a>

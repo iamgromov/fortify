@@ -13,7 +13,13 @@ const Header: React.FunctionComponent = () => {
           className='right hide-on-med-and-down'
         >
           <li>
-            <a href='https://github.com/iamgromov/item-shop'>Repo</a>
+            <a
+              href='https://github.com/iamgromov/item-shop'
+              rel='noreferrer'
+              target='_blank'
+            >
+              Repo
+            </a>
           </li>
         </ul>
       </div>
