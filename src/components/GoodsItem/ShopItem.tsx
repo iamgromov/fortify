@@ -1,9 +1,10 @@
-import React from 'react';
-import type { IShopItemProps } from '../../types/interfaces';
+import { useContext } from 'react';
+import { ShopContext } from '../../services/ShopContext';
+import type { IShopItem } from '../../types/interfaces';
 
 // import styles from './ShopItem.module.scss'
 
-const ShopItem: React.FC<IShopItemProps> = ({
+const ShopItem: React.FC<IShopItem> = ({
   offerId,
   displayName,
   displayType,
@@ -11,8 +12,9 @@ const ShopItem: React.FC<IShopItemProps> = ({
   price,
   displayAssets,
   quantity,
-  addToBasket,
 }) => {
+  const { addToBasket } = useContext(ShopContext);
+
   return (
     <div
       id={offerId}
@@ -20,6 +22,10 @@ const ShopItem: React.FC<IShopItemProps> = ({
     >
       <div className='card-image'>
         <img
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = `https://placehold.jp/30/ff8c00/ffffff/300x300.png?text=${displayName}`;
+          }}
           alt={`${displayName} poster`}
           src={displayAssets[0]?.full_background}
         />

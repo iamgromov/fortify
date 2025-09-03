@@ -1,14 +1,12 @@
-import type { ICartListProps } from '../../types/interfaces';
+import { useContext } from 'react';
+import { ShopContext } from '../../services/ShopContext';
 import CartItem from '../CartItem/CartItem';
+
 // import styles from './CartList.module.scss';
 
-const CartList: React.FC<ICartListProps> = ({
-  order,
-  handleBasketShow,
-  removeFromBasket,
-  decQuantity,
-  incQuantity,
-}) => {
+const CartList: React.FC = () => {
+  const { order = [], handleBasketShow } = useContext(ShopContext);
+
   const totalPrice: number = order.reduce((sum, el) => {
     return sum + +el.price.regularPrice * el.quantity;
   }, 0);
@@ -22,9 +20,6 @@ const CartList: React.FC<ICartListProps> = ({
             <CartItem
               key={item.offerId}
               {...item}
-              removeFromBasket={removeFromBasket}
-              decQuantity={decQuantity}
-              incQuantity={incQuantity}
             />
           );
         })

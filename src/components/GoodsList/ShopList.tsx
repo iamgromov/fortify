@@ -1,8 +1,10 @@
-import React from 'react';
+import { useContext } from 'react';
+import { ShopContext } from '../../services/ShopContext';
 import ShopItem from '../GoodsItem/ShopItem';
-import type { IShopListProps } from '../../types/interfaces';
 
-const ShopList: React.FC<IShopListProps> = ({ goods, addToBasket }) => {
+const ShopList: React.FC = () => {
+  const { goods = [] } = useContext(ShopContext);
+
   if (!goods.length) {
     return <h3>Nothing</h3>;
   }
@@ -14,7 +16,6 @@ const ShopList: React.FC<IShopListProps> = ({ goods, addToBasket }) => {
           <ShopItem
             key={item.offerId}
             {...item}
-            addToBasket={addToBasket}
           />
         );
       })}

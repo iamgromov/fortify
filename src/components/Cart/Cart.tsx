@@ -1,10 +1,12 @@
-import type { ICartProps } from '../../types/interfaces';
+import { useContext } from 'react';
+import { ShopContext } from '../../services/ShopContext';
+
 import styles from './Cart.module.scss';
 
-const Cart: React.FC<ICartProps> = ({
-  quantity,
-  handleBasketShow,
-}) => {
+const Cart: React.FC = () => {
+  const { order, handleBasketShow } = useContext(ShopContext);
+  const quantity = order.length;
+
   return (
     <div
       className={styles.cart}
