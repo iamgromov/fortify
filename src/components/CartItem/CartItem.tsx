@@ -1,14 +1,16 @@
-import type { ICartItemProps } from '../../types/interfaces';
+import { useContext } from 'react';
+import { ShopContext } from '../../services/ShopContext';
+import type { IOrderItem } from '../../types/interfaces';
 
-const CartItem: React.FC<ICartItemProps> = ({
+const CartItem: React.FC<IOrderItem> = ({
   offerId,
   displayName,
   price,
   quantity,
-  removeFromBasket,
-  decQuantity,
-  incQuantity,
 }) => {
+  const { incQuantity, decQuantity, removeFromBasket } =
+    useContext(ShopContext);
+
   return (
     <li className='collection-item'>
       {displayName}{' '}

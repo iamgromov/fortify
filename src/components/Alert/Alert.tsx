@@ -1,7 +1,9 @@
-import { useEffect } from 'react';
-import type { IAlertProps } from '../../types/interfaces';
+import { useEffect, useContext } from 'react';
+import { ShopContext } from '../../services/ShopContext';
 
-const Alert: React.FC<IAlertProps> = ({ name, closeAlert }) => {
+const Alert: React.FC = () => {
+  const { alertName = '', closeAlert } = useContext(ShopContext);
+
   useEffect(() => {
     const timerId = setTimeout(closeAlert, 3000);
 
@@ -9,11 +11,11 @@ const Alert: React.FC<IAlertProps> = ({ name, closeAlert }) => {
       clearTimeout(timerId);
     };
     // eslint-disable-next-line
-  }, [name]);
+  }, [alertName]);
 
   return (
     <div id='toast-container'>
-      <div className='toast'>{name} added</div>
+      <div className='toast'>{alertName} added</div>
     </div>
   );
 };
