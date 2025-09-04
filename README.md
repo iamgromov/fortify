@@ -4,7 +4,7 @@ This is a React + TS + Vite project using fortniteapi.io
 
 ## Setup
 
-Clone project:
+Clone this project:
 
 ```bash
 git clone https://github.com/iamgromov/fortify
@@ -21,13 +21,13 @@ npm install
 
 To work with the fortniteapi.io API, you need to obtain an API key:
 
-1. Register and get your key at [https://fortniteapi.io/](https://fortniteapi.io/)
+1. Register and get your key at [fortniteapi.io/](https://fortniteapi.io/)
 
 2. Create a `.env.local` file in the root of your project and add:
 
-`VITE_API_URL_KEY=your_api_key_here`
+  `VITE_API_URL_KEY=your_api_key_here`
 
-3. Use the key in your code via `import.meta.env.VITE_API_URL_KEY`gi
+3. Use the key in your code via `import.meta.env.VITE_API_URL_KEY`
 
 ## Get Started
 
