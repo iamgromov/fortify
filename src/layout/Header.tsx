@@ -14,7 +14,7 @@ const Header: React.FunctionComponent = () => {
         >
           <li>
             <a
-              href='https://github.com/iamgromov/item-shop'
+              href='https://github.com/iamgromov/fortify'
               rel='noreferrer'
               target='_blank'
             >
