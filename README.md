@@ -1,4 +1,4 @@
-# FORTIFY
+# Fortify
 
 This is a React + TS + Vite project using fortniteapi.io
 
