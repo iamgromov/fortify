@@ -25,7 +25,7 @@ To work with the fortniteapi.io API, you need to obtain an API key:
 
 2. Create a `.env.local` file in the root of your project and add:
 
-  `VITE_API_URL_KEY=your_api_key_here`
+    `VITE_API_URL_KEY=your_api_key_here`
 
 3. Use the key in your code via `import.meta.env.VITE_API_URL_KEY`
 
